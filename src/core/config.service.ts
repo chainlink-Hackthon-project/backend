@@ -9,12 +9,12 @@ class ConfigService {
     return {
       type: 'postgres',
       host: process.env.DB_HOST,
-      port: parseInt('6543', 10),
+      port: parseInt(process.env.DB_PORT!, 10),
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
 
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      entities: [__dirname + '/../**/*.entity.{ts,js}'],
       migrationsTableName: 'migration',
       migrations: [__dirname + '/migration/*{.ts,.js}'],
 

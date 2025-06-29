@@ -5,11 +5,15 @@ import { IndexerModule } from './indexer/indexer.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { configService } from './core/config.service';
 import { UserModule } from './user/user.module';
+import { BorrowersUpdateModule } from './borrowers_update/borrowers_update.module';
+import { LenderUpdateModule } from './lender_update/lender_update.module';
 
 @Module({
   imports: [IndexerModule,
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
-    UserModule
+    UserModule,
+    BorrowersUpdateModule,
+    LenderUpdateModule
   ],
   controllers: [AppController],
   providers: [AppService],
